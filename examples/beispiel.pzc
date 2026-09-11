@@ -1,0 +1,137 @@
+// Willkommen bei PoeziCode!
+// Links schreibst du, mit „Kompilieren" (F5) entsteht rechts das PDF.
+// Alle Befehle stehen unter „Docs" – oder tippe @ für Vorschläge.
+// Die Befehle sind englisch, der Text darf natürlich deutsch sein.
+
+@document[paper=A4, margin=2.5cm, font=serif, fontsize=11, lang=de]
+@header{PoeziCode}{}{@today}
+@footer{}{Seite @page von @pages}{}
+
+// Eigene Befehle: #1, #2 … sind die Argumente.
+@define{poezi}{@color[turquoise]{@bold{PoeziCode}}}
+@define{betont}{@bold{@color[magenta]{#1}}}
+
+@title{Willkommen bei PoeziCode}
+@subtitle{Dokumente schreiben wie Code}
+@author{PoeziCode}
+@date
+
+@toc
+
+@pagebreak
+
+@chapter{Erste Schritte}
+
+Ein Absatz ist einfach Text. Eine @bold{leere Zeile} beginnt einen neuen Absatz.
+Einzelne Zeilenumbrüche im Quelltext werden – wie in LaTeX – zu Leerzeichen.
+
+Innerhalb eines Absatzes schreibst du @italic{kursiv}, @underline{unterstrichen},
+@strike{durchgestrichen}, @highlight{markiert} oder @code{Code} – und
+natürlich @color[red]{farbig}. Das hier ist @poezi, ein eigener Befehl, und das
+ist @betont{mit Argument}. Wasser ist H@sub{2}O, eine Fläche misst 3 m@sup{2}.
+
+@note{
+  Jeder Befehl beginnt mit @code{@}. Argumente stehen in @code{\{ \}}, Optionen
+  in @code{[ ]}. Ein @-Zeichen selbst schreibst du als @code{\@}, einen Kommentar
+  mit @code{//}. Mit @code{@newln} am Ende wird dieser Kasten eine Zeile höher. @newln
+}
+
+@section{Ausrichtung}
+
+@left{Dieser Satz steht links.}
+@center{Dieser Satz steht in der Mitte.}
+@right{Und dieser rechts.}
+
+@align[justify]{Mit @code{@align[justify]} steht ein Absatz im Blocksatz – bündig an
+beiden Rändern, sobald er lang genug ist, um über mehrere Zeilen zu laufen. Genauso
+gehen @code{@align[left]}, @code{@align[center]} und @code{@align[right]}.}
+
+@section{Abstände}
+
+Mit @code{@block[…]{…}} bekommt jeder Block Abstand wie ein @code{<div>} in HTML:
+@code{top} und @code{bottom} schieben ihn nach unten oder ziehen ihn mit negativen Werten
+näher heran, @code{left} und @code{right} rücken ihn ein, und @code{shift} verschiebt nur
+ihn selbst. Längen gehen auch in Zeilen, etwa @code{top=2ln}.
+
+@block[top=1ln, left=1.5cm, right=1.5cm]{
+  @note[Eingerückt]{Dieser Kasten steht eine Zeile tiefer und ist links und rechts 1,5 cm eingerückt.}
+}
+
+@section{Listen}
+
+@list{
+  @item{Aufzählungen mit @code{@list}}
+  @item{Nummerierte Listen mit @code{@numbered}:
+    @numbered{
+      @item{Listen lassen sich verschachteln,}
+      @item{so tief du willst.}
+    }
+  }
+  @item{Links wie @link{https://github.com}{dieser hier} sind anklickbar.}
+}
+
+@section{Tabellen}
+
+@table[header]{
+  @row{Befehl | Wirkung | Beispiel}
+  @row{@code{@bold} | fett | @bold{Text}}
+  @row{@code{@italic} | kursiv | @italic{Text}}
+  @row{@code{$…$} | Formel im Text | $x^2 + y^2 = r^2$}
+}
+
+@chapter{Mathematik}
+
+Formeln im Text stehen zwischen Dollarzeichen: $a^2 + b^2 = c^2$ oder
+$e^{i@pi} + 1 = 0$. Abgesetzte Formeln stehen zwischen doppelten Dollarzeichen.
+Die Mitternachtsformel:
+
+$$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
+
+Summen, Integrale und Grenzwerte bekommen ihre Grenzen mit @code{_} und @code{^}:
+
+$$ @sum_{k=1}^{n} k^2 = @frac{n(n+1)(2n+1)}{6} $$
+
+$$ @integral_{-@infty}^{@infty} e^{-x^2} dx = @sqrt{@pi} $$
+
+$$ lim_{n -> @infty} @paren{1 + @frac{1}{n}}^n = e $$
+
+Matrizen, Vektoren und Fallunterscheidungen:
+
+$$ A = @matrix{ @row{1 & 2 & 3} @row{4 & 5 & 6} } ,  @vec{v} @in @R^3 $$
+
+$$ @abs{x} = @cases{ @row{x & @text{falls } x >= 0} @row{-x & @text{sonst}} } $$
+
+@section{Zeichnungen und 3D}
+
+Mit @code{@drawing} entstehen Skizzen und Funktionsgraphen direkt im Dokument:
+
+@drawing[axes, grid]{
+  @plot{x^2 - 2}
+  @plot[color=magenta, dashed]{2sin(x)}
+  @point[below]{0,-2}{$S$}
+  @label[right]{-3,8; 13}{$f(x) = x^2 - 2$}
+}{Zwei Funktionen im Koordinatensystem}
+
+@surface{x^2 - y^2}{Eine Sattelfläche. Eigene 3D-Modelle baust du im CAD-Editor und setzt sie mit @code{@model\{name\}} ein.}
+
+@section{Code und Zitate}
+
+@codeblock[dart]{
+  void main() {
+    print('Hallo aus PoeziCode!');
+  }
+}
+
+@quote{Die Grenzen meiner Sprache bedeuten die Grenzen meiner Welt.}{Ludwig Wittgenstein}
+
+@warning{Vergiss nicht zu speichern – mit @bold{Strg+S}.}
+
+@columns{
+  @bold{Links:} Mit @code{@columns} stehen Inhalte nebeneinander.
+}{
+  @bold{Rechts:} Bis zu vier Spalten sind möglich.
+}
+
+@rule
+
+@center{Viel Spaß beim Schreiben! $@pi @approx 3,14159$}

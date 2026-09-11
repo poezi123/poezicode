@@ -1,0 +1,3 @@
+# Die Pakete gehören in ein GitHub-Release, nicht ins Repository.
+# Packages belong in a GitHub release, not in the repository.
+release/

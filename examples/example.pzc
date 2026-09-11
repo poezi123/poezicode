@@ -1,0 +1,136 @@
+// Welcome to PoeziCode!
+// Write on the left; "Compile" (F5) creates the PDF on the right.
+// All commands are listed under "Docs" – or type @ for suggestions.
+
+@document[paper=A4, margin=2.5cm, font=serif, fontsize=11, lang=en]
+@header{PoeziCode}{}{@today}
+@footer{}{Page @page of @pages}{}
+
+// Custom commands: #1, #2 … are the arguments.
+@define{poezi}{@color[turquoise]{@bold{PoeziCode}}}
+@define{stress}{@bold{@color[magenta]{#1}}}
+
+@title{Welcome to PoeziCode}
+@subtitle{Write documents like code}
+@author{PoeziCode}
+@date
+
+@toc
+
+@pagebreak
+
+@chapter{First steps}
+
+A paragraph is simply text. An @bold{empty line} starts a new paragraph.
+Single line breaks in the source become spaces – just like in LaTeX.
+
+Inside a paragraph you can write @italic{italic}, @underline{underlined},
+@strike{struck through}, @highlight{highlighted} or @code{code} – and of
+course @color[red]{coloured} text. This is @poezi, a custom command, and this
+is @stress{with an argument}. Water is H@sub{2}O, an area measures 3 m@sup{2}.
+
+@note{
+  Every command starts with @code{@}. Arguments go into @code{\{ \}}, options
+  into @code{[ ]}. Write an @-sign itself as @code{\@} and a comment with
+  @code{//}. With @code{@newln} at the end this box gets one line taller. @newln
+}
+
+@section{Alignment}
+
+@left{This sentence is on the left.}
+@center{This sentence is centred.}
+@right{And this one is on the right.}
+
+@align[justify]{With @code{@align[justify]} a paragraph is justified – flush with
+both margins as soon as it is long enough to run over several lines. The same works
+with @code{@align[left]}, @code{@align[center]} and @code{@align[right]}.}
+
+@section{Spacing}
+
+With @code{@block[…]{…}} any block gets spacing like a @code{<div>} in HTML:
+@code{top} and @code{bottom} push it down or pull it closer with negative values,
+@code{left} and @code{right} indent it, and @code{shift} moves only the block itself.
+Lengths also work in lines, e.g. @code{top=2ln}.
+
+@block[top=1ln, left=1.5cm, right=1.5cm]{
+  @note[Indented]{This box sits one line lower and is indented by 1.5 cm on both sides.}
+}
+
+@section{Lists}
+
+@list{
+  @item{Bulleted lists with @code{@list}}
+  @item{Numbered lists with @code{@numbered}:
+    @numbered{
+      @item{lists can be nested,}
+      @item{as deep as you like.}
+    }
+  }
+  @item{Links like @link{https://github.com}{this one} are clickable.}
+}
+
+@section{Tables}
+
+@table[header]{
+  @row{Command | Effect | Example}
+  @row{@code{@bold} | bold | @bold{Text}}
+  @row{@code{@italic} | italic | @italic{Text}}
+  @row{@code{$…$} | inline formula | $x^2 + y^2 = r^2$}
+}
+
+@chapter{Math}
+
+Inline formulas go between dollar signs: $a^2 + b^2 = c^2$ or
+$e^{i@pi} + 1 = 0$. Displayed formulas go between double dollar signs.
+The quadratic formula:
+
+$$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
+
+Sums, integrals and limits get their bounds with @code{_} and @code{^}:
+
+$$ @sum_{k=1}^{n} k^2 = @frac{n(n+1)(2n+1)}{6} $$
+
+$$ @integral_{-@infty}^{@infty} e^{-x^2} dx = @sqrt{@pi} $$
+
+$$ lim_{n -> @infty} @paren{1 + @frac{1}{n}}^n = e $$
+
+Matrices, vectors and case distinctions:
+
+$$ A = @matrix{ @row{1 & 2 & 3} @row{4 & 5 & 6} } ,  @vec{v} @in @R^3 $$
+
+$$ @abs{x} = @cases{ @row{x & @text{if } x >= 0} @row{-x & @text{otherwise}} } $$
+
+@section{Drawings and 3D}
+
+@code{@drawing} creates sketches and function graphs right inside the document:
+
+@drawing[axes, grid]{
+  @plot{x^2 - 2}
+  @plot[color=magenta, dashed]{2sin(x)}
+  @point[below]{0,-2}{$S$}
+  @label[right]{-3.8, 13}{$f(x) = x^2 - 2$}
+}{Two functions in a coordinate system}
+
+@surface{x^2 - y^2}{A saddle surface. Build your own 3D models in the CAD editor and insert them with @code{@model\{name\}}.}
+
+@section{Code and quotes}
+
+@codeblock[dart]{
+  void main() {
+    print('Hello from PoeziCode!');
+  }
+}
+
+@quote{The limits of my language mean the limits of my world.}{Ludwig Wittgenstein}
+
+@warning{Do not forget to save – with @bold{Ctrl+S}.}
+
+@columns{
+  @bold{Left:} With @code{@columns} content sits side by side.
+}{
+  @bold{Right:} Up to four columns are possible.
+}
+
+@rule
+
+@center{Have fun writing! $@pi @approx 3.14159$}
