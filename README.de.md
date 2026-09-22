@@ -65,11 +65,11 @@ $$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
 
 | System | Paket | |
 |---|---|---|
-| **Windows 10 / 11** (64 Bit) – Installer | `poezicode-0.2.0-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.2.0/poezicode-0.2.0-windows-x64-setup.exe) |
-| **Windows 10 / 11** (64 Bit) – zum Entpacken, ohne Installation | `poezicode-0.2.0-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.2.0/poezicode-0.2.0-windows-x64.zip) |
-| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.2.0-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.2.0/poezicode-0.2.0-1-x86_64.pkg.tar.zst) |
-| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.2.0_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.2.0/poezicode_0.2.0_amd64.deb) |
-| **Alle anderen Linux-Systeme** (Fedora, openSUSE …) | `poezicode-0.2.0-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.2.0/poezicode-0.2.0-linux-x64.tar.gz) |
+| **Windows 10 / 11** (64 Bit) – Installer | `poezicode-0.3.0-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode-0.3.0-windows-x64-setup.exe) |
+| **Windows 10 / 11** (64 Bit) – zum Entpacken, ohne Installation | `poezicode-0.3.0-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode-0.3.0-windows-x64.zip) |
+| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.3.0-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode-0.3.0-1-x86_64.pkg.tar.zst) |
+| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.3.0_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode_0.3.0_amd64.deb) |
+| **Alle anderen Linux-Systeme** (Fedora, openSUSE …) | `poezicode-0.3.0-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode-0.3.0-linux-x64.tar.gz) |
 
 Alle Versionen und Prüfsummen (`SHA256SUMS.txt`) stehen auf der
 [Release-Seite](https://github.com/poezi123/poezicode/releases).
@@ -81,7 +81,7 @@ und GTK 3, also Ubuntu 24.04, Debian 13, Fedora 39 oder ein aktuelles Arch-basie
 
 ## Installation
 
-**Windows** – `poezicode-0.2.0-windows-x64-setup.exe` starten. Administratorrechte braucht es
+**Windows** – `poezicode-0.3.0-windows-x64-setup.exe` starten. Administratorrechte braucht es
 nicht: PoeziCode wird für deinen Benutzer installiert, steht im Startmenü, und `.pzc`-Dateien
 öffnen sich damit. Der Installer ist noch nicht signiert, deshalb meldet Windows SmartScreen
 womöglich *„Der Computer wurde durch Windows geschützt“* – dann **Weitere Informationen → Trotzdem
@@ -90,20 +90,20 @@ ausführen**. Lieber ohne Installation? Das ZIP entpacken und `poezicode.exe` st
 **Arch Linux und Ableger**
 
 ```sh
-sudo pacman -U poezicode-0.2.0-1-x86_64.pkg.tar.zst
+sudo pacman -U poezicode-0.3.0-1-x86_64.pkg.tar.zst
 ```
 
 **Ubuntu, Debian, Linux Mint** – Datei doppelt anklicken, oder:
 
 ```sh
-sudo apt install ./poezicode_0.2.0_amd64.deb
+sudo apt install ./poezicode_0.3.0_amd64.deb
 ```
 
 **Alle anderen Distributionen** – ohne Administratorrechte:
 
 ```sh
-tar xzf poezicode-0.2.0-linux-x64.tar.gz
-cd poezicode-0.2.0-linux-x64
+tar xzf poezicode-0.3.0-linux-x64.tar.gz
+cd poezicode-0.3.0-linux-x64
 ./install.sh        # trägt PoeziCode ins Anwendungsmenü ein (~/.local)
 # oder direkt starten:  ./poezicode
 ```
@@ -114,7 +114,7 @@ cd poezicode-0.2.0-linux-x64
 sha256sum -c SHA256SUMS.txt --ignore-missing
 ```
 
-Unter Windows in PowerShell: `Get-FileHash poezicode-0.2.0-windows-x64-setup.exe` und den Wert mit
+Unter Windows in PowerShell: `Get-FileHash poezicode-0.3.0-windows-x64-setup.exe` und den Wert mit
 `SHA256SUMS.txt` vergleichen.
 
 Unter Linux steht PoeziCode danach im Anwendungsmenü, und `.pzc`-Dateien öffnen sich damit.
@@ -138,6 +138,7 @@ Im Terminal: `poezicode` oder `poezicode mein-dokument.pzc`.
 | Was | Schreibweise |
 |---|---|
 | Seite einrichten | `@document[paper=A4, margin=2.5cm, font=serif, fontsize=11, lang=de]` |
+| Abstände und Aussehen | `@style[modern]` · `@style[paragraph=0.8ln, indent=1ln]` · `@block[fontsize=9]{…}` |
 | Titel, Inhaltsverzeichnis | `@title{…}` `@author{…}` `@date` `@toc` |
 | Überschriften (nummeriert) | `@chapter{…}` `@section{…}` `@subsection{…}` |
 | Text | `@bold{…}` `@italic{…}` `@underline{…}` `@highlight{…}` `@color[red]{…}` |
@@ -148,6 +149,7 @@ Im Terminal: `poezicode` oder `poezicode mein-dokument.pzc`.
 | Bilder | `@image[width=50%]{foto.png}{Bildunterschrift}` |
 | Zeichnungen und 3D | `@drawing[axes]{ @line{0,0}{3,2} @circle{1,1}{0.5} @plot{sin(x)} }` `@surface{x^2 - y^2}` `@model{name}` |
 | Kopf- und Fußzeile | `@header{links}{Mitte}{rechts}` `@footer{}{Seite @page von @pages}{}` |
+| Rechnen | `@set{a}{5}` · `@function{f(x)}{x^2 - 2}` · `@calc{2*a + 1}` · `@plot{f(x)}` |
 | Eigene Befehle | `@define{wichtig}{@bold{@color[red]{#1}}}` → `@wichtig{Text}` |
 
 Die Befehle sind englisch, der Text darf natürlich deutsch sein.
@@ -171,6 +173,13 @@ Die Befehle sind englisch, der Text darf natürlich deutsch sein.
 - **Druckansicht** – in Farbe oder Schwarz-weiß, bevor der Druckdialog aufgeht.
 - **KI-Prompt** – ein Klick kopiert eine Anleitung, mit der ChatGPT, Claude & Co. PoeziCode für
   dich schreiben.
+- **Rechnen im Dokument** – `@set{a}{5}`, `@function{f(x)}{x^2-2}` und `@calc{2*a+1}`: eine Größe
+  einmal festlegen und überall benutzen, im Text, in Formeln und im Funktionsgraphen.
+- **Satz, der sich selbst kümmert** – Kästen und Codeblöcke werden nicht mehr an der Blattkante
+  abgeschnitten, Überschriften stehen nicht allein unten, und `@style[modern]` stellt alle
+  Abstände auf einmal ein.
+- **Befehlszeile** – `poezicode-cli` baut, zeigt, prüft und beobachtet Dokumente ohne Fenster,
+  siehe unten.
 - **Deutsch und Englisch** – Oberfläche, Meldungen und Befehlsbeschreibungen in beiden Sprachen.
 - **Inhaltsverzeichnis, Lesezeichen und Links** – im PDF anklickbar.
 
@@ -181,6 +190,23 @@ Die Befehle sind englisch, der Text darf natürlich deutsch sein.
 <p align="center">
   <img src="docs/screenshots/print-de.png" alt="Druckansicht in Schwarz-weiß" width="70%">
 </p>
+
+## Befehlszeile
+
+In jedem Paket steckt auch `poezicode-cli` – für Skripte, Server und KI-Werkzeuge, die ohne
+Fenster arbeiten:
+
+```sh
+poezicode-cli build bericht.pzc            # schreibt bericht.pdf
+poezicode-cli render bericht.pzc -o bilder/ # je Seite ein PNG, zum Ansehen
+poezicode-cli check bericht.pzc --json     # jeder Fehler mit Zeile und Spalte
+poezicode-cli watch bericht.pzc --render   # baut bei jeder Änderung neu
+poezicode-cli docs --json                  # alle Befehle der Sprache
+poezicode-cli prompt                       # die Anleitung für eine KI
+```
+
+`check --json` antwortet maschinenlesbar. So kann ein Assistent wie Claude Code oder Codex ein
+Dokument schreiben, seine eigenen Fehler sehen und sich die fertigen Seiten ansehen.
 
 ## Tastenkürzel
 
