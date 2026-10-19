@@ -65,11 +65,11 @@ $$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
 
 | System | Package | |
 |---|---|---|
-| **Windows 10 / 11** (64-bit) – installer | `poezicode-0.3.0-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-windows-x64-setup.exe) |
-| **Windows 10 / 11** (64-bit) – portable, no installation | `poezicode-0.3.0-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-windows-x64.zip) |
-| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.3.0-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-1-x86_64.pkg.tar.zst) |
-| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.3.0_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode_0.4.0_amd64.deb) |
-| **Any other Linux** (Fedora, openSUSE, …) | `poezicode-0.3.0-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-linux-x64.tar.gz) |
+| **Windows 10 / 11** (64-bit) – installer | `poezicode-0.4.0-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-windows-x64-setup.exe) |
+| **Windows 10 / 11** (64-bit) – portable, no installation | `poezicode-0.4.0-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-windows-x64.zip) |
+| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.4.0-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-1-x86_64.pkg.tar.zst) |
+| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.4.0_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode_0.4.0_amd64.deb) |
+| **Any other Linux** (Fedora, openSUSE, …) | `poezicode-0.4.0-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-linux-x64.tar.gz) |
 
 All versions and checksums (`SHA256SUMS.txt`) are on the
 [releases page](https://github.com/poezi123/poezicode/releases).
