@@ -1,0 +1,104 @@
+@document[paper=A4, font=serif, fontsize=11, lang=de]
+@style[modern, headertop=1.5cm, headergap=0.8cm, footerbottom=1.5cm, footergap=0.6cm]
+@title{Elektrotechnik mit PoeziCode}
+@subtitle{Schaltpläne, Logik und Platinen}
+@author{HTL}
+@header{Elektrotechnik}{}{HTL}
+@footer{}{Seite @page von @pages}{}
+
+@chapter{Schaltplan}
+
+Ein Schaltplan entsteht aus Schaltzeichen (@bold{@code{@part}}), Leitungen
+(@code{@wire}) und Verbindungspunkten (@code{@junction}). Jedes Zweipol-Bauteil
+reicht @bold{1,5 Einheiten} nach jeder Seite – darum liegen die Teile hier drei
+Einheiten auseinander, und die Leitungen laufen gerade.
+
+@circuit[width=11cm]{
+  @part[source, name=U1, value=12 V, rot=90]{0, 2}
+  @part[resistor, name=R1, value=1k]{3, 5}
+  @part[led, name=D1]{8, 5}
+  @part[switch, name=S1, rot=90]{11, 2}
+  @wire{0, 3.5 | 0, 5 | 1.5, 5}
+  @wire{4.5, 5 | 6.5, 5}
+  @wire{9.5, 5 | 11, 5 | 11, 3.5}
+  @wire{11, 0.5 | 11, -1 | 0, -1 | 0, 0.5}
+}{Reihenschaltung mit Vorwiderstand}
+
+Der Vorwiderstand ergibt sich aus der Spannung über der LED:
+
+$$ R = @frac{U_B - U_F}{I_F} = @frac{12 - 2}{0,01} = 1000 @Omega $$
+
+@chapter{Digitaltechnik}
+
+Mit @code{[truthtable]} rechnet PoeziCode die Schaltung durch und setzt die
+Wahrheitstabelle unter die Zeichnung. Nötig sind nur Ein- und Ausgänge.
+
+@circuit[truthtable, width=11cm]{
+  @part[input, name=A]{0, 2}
+  @part[input, name=B]{0, -2}
+  @part[and, name=K1]{6, 1}
+  @part[or, name=K2]{6, -3}
+  @part[xor, name=K3]{12, -1}
+  @part[output, name=Y]{17, -1}
+  @wire{1.5, 2 | 2.5, 2 | 2.5, 1.5 | 4.5, 1.5}
+  @wire{2.5, 2 | 2.5, -2.5 | 4.5, -2.5}
+  @wire{1.5, -2 | 3.5, -2 | 3.5, 0.5 | 4.5, 0.5}
+  @wire{3.5, -2 | 3.5, -3.5 | 4.5, -3.5}
+  @wire{7.5, 1 | 9, 1 | 9, -0.5 | 10.5, -0.5}
+  @wire{7.5, -3 | 9, -3 | 9, -1.5 | 10.5, -1.5}
+  @wire{13.5, -1 | 15.5, -1}
+  @junction{2.5, 2}
+  @junction{3.5, -2}
+}{Y = (A @land B) XOR (A @lor B)}
+
+@chapter{Platine}
+
+Dieselbe Schaltung als Platine: Bauformen in Millimetern im 2,54-mm-Raster,
+Leiterbahnen mit echter Breite, Durchkontaktierungen und eine Massefläche.
+
+@pcb[board=46x30, width=11cm, ground]{
+  @footprint[terminal, name=X1]{7, 24}
+  @footprint[resistor, name=R1]{20, 24}
+  @footprint[led, name=D1]{34, 24}
+  @footprint[dip14, name=IC1]{23, 12}
+  @footprint[electrolytic, name=C1]{7, 6}
+  @footprint[header4, name=J1]{34, 5}
+  @footprint[hole]{3, 3}
+  @footprint[hole]{43, 3}
+  @track[width=0.8]{9.54, 24 | 14.92, 24}
+  @track[width=0.8]{25.08, 24 | 32.73, 24}
+  @track[width=0.6]{14.1, 15.81 | 14.1, 20 | 20, 20}
+  @track[width=0.6, bottom]{7, 8.54 | 7, 15 | 14.1, 15 | 14.1, 15.81}
+  @via{14.1, 15.81}
+}{Bestückungsplan, 46 × 30 mm}
+
+Und dieselbe Platine als Körper – man sieht, was man später in der Hand hält:
+
+@pcb[board=46x30, width=11cm, 3d, yaw=30, pitch=32]{
+  @footprint[terminal, name=X1]{7, 24}
+  @footprint[resistor, name=R1]{20, 24}
+  @footprint[led, name=D1]{34, 24}
+  @footprint[dip14, name=IC1]{23, 12}
+  @footprint[electrolytic, name=C1]{7, 6}
+  @footprint[header4, name=J1]{34, 5}
+  @footprint[hole]{3, 3}
+  @footprint[hole]{43, 3}
+  @track[width=0.8]{9.54, 24 | 14.92, 24}
+  @track[width=0.8]{25.08, 24 | 32.73, 24}
+}{Dieselbe Platine in 3D}
+
+@chapter{Technische Zeichnung}
+
+Maßketten zeigen Längen wie in der Werkstatt: @code{@dimension} zieht
+Maßhilfslinien, Pfeile und die Maßzahl. Ohne eigenen Text steht die gemessene
+Länge dort.
+
+@drawing[width=10cm]{
+  @rect{0, 0}{8, 5}
+  @circle{2, 2.5}{1}
+  @circle{6, 2.5}{1}
+  @dimension[offset=-1.2]{0, 0}{8, 0}{80 mm}
+  @dimension[offset=-1.2]{0, 0}{0, 5}{50 mm}
+  @dimension[offset=1.2]{2, 2.5}{6, 2.5}{40 mm}
+  @label[above]{4, 3.8}{Bohrungen 20 mm}
+}{Frontplatte mit zwei Bohrungen}

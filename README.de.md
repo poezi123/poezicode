@@ -65,11 +65,11 @@ $$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
 
 | System | Paket | |
 |---|---|---|
-| **Windows 10 / 11** (64 Bit) – Installer | `poezicode-0.3.0-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode-0.3.0-windows-x64-setup.exe) |
-| **Windows 10 / 11** (64 Bit) – zum Entpacken, ohne Installation | `poezicode-0.3.0-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode-0.3.0-windows-x64.zip) |
-| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.3.0-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode-0.3.0-1-x86_64.pkg.tar.zst) |
-| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.3.0_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode_0.3.0_amd64.deb) |
-| **Alle anderen Linux-Systeme** (Fedora, openSUSE …) | `poezicode-0.3.0-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.3.0/poezicode-0.3.0-linux-x64.tar.gz) |
+| **Windows 10 / 11** (64 Bit) – Installer | `poezicode-0.4.4-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-windows-x64-setup.exe) |
+| **Windows 10 / 11** (64 Bit) – zum Entpacken, ohne Installation | `poezicode-0.4.4-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-windows-x64.zip) |
+| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.4.4-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-1-x86_64.pkg.tar.zst) |
+| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.4.4_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode_0.4.4_amd64.deb) |
+| **Alle anderen Linux-Systeme** (Fedora, openSUSE …) | `poezicode-0.4.4-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-linux-x64.tar.gz) |
 
 Alle Versionen und Prüfsummen (`SHA256SUMS.txt`) stehen auf der
 [Release-Seite](https://github.com/poezi123/poezicode/releases).
@@ -81,7 +81,7 @@ und GTK 3, also Ubuntu 24.04, Debian 13, Fedora 39 oder ein aktuelles Arch-basie
 
 ## Installation
 
-**Windows** – `poezicode-0.3.0-windows-x64-setup.exe` starten. Administratorrechte braucht es
+**Windows** – `poezicode-0.4.4-windows-x64-setup.exe` starten. Administratorrechte braucht es
 nicht: PoeziCode wird für deinen Benutzer installiert, steht im Startmenü, und `.pzc`-Dateien
 öffnen sich damit. Der Installer ist noch nicht signiert, deshalb meldet Windows SmartScreen
 womöglich *„Der Computer wurde durch Windows geschützt“* – dann **Weitere Informationen → Trotzdem
@@ -90,20 +90,20 @@ ausführen**. Lieber ohne Installation? Das ZIP entpacken und `poezicode.exe` st
 **Arch Linux und Ableger**
 
 ```sh
-sudo pacman -U poezicode-0.3.0-1-x86_64.pkg.tar.zst
+sudo pacman -U poezicode-0.4.4-1-x86_64.pkg.tar.zst
 ```
 
 **Ubuntu, Debian, Linux Mint** – Datei doppelt anklicken, oder:
 
 ```sh
-sudo apt install ./poezicode_0.3.0_amd64.deb
+sudo apt install ./poezicode_0.4.4_amd64.deb
 ```
 
 **Alle anderen Distributionen** – ohne Administratorrechte:
 
 ```sh
-tar xzf poezicode-0.3.0-linux-x64.tar.gz
-cd poezicode-0.3.0-linux-x64
+tar xzf poezicode-0.4.4-linux-x64.tar.gz
+cd poezicode-0.4.4-linux-x64
 ./install.sh        # trägt PoeziCode ins Anwendungsmenü ein (~/.local)
 # oder direkt starten:  ./poezicode
 ```
@@ -114,7 +114,7 @@ cd poezicode-0.3.0-linux-x64
 sha256sum -c SHA256SUMS.txt --ignore-missing
 ```
 
-Unter Windows in PowerShell: `Get-FileHash poezicode-0.3.0-windows-x64-setup.exe` und den Wert mit
+Unter Windows in PowerShell: `Get-FileHash poezicode-0.4.4-windows-x64-setup.exe` und den Wert mit
 `SHA256SUMS.txt` vergleichen.
 
 Unter Linux steht PoeziCode danach im Anwendungsmenü, und `.pzc`-Dateien öffnen sich damit.
@@ -125,7 +125,9 @@ Im Terminal: `poezicode` oder `poezicode mein-dokument.pzc`.
 ## Schnellstart
 
 1. PoeziCode starten – beim ersten Start öffnet sich ein Beispieldokument, das alles zeigt
-   (liegt auch in [examples/](examples/)).
+   (liegt auch in [examples/](examples/)). Für Elektrotechnik: [elektrotechnik.pzc](examples/elektrotechnik.pzc)
+   (Schaltplan, Platine in 2D und 3D, Bemaßung) und [logik.pzc](examples/logik.pzc)
+   (Grundgatter und Halbaddierer mit gerechneten Wahrheitstabellen).
 2. Links tippen. Ist **Live** an, aktualisiert sich das PDF rechts beim Schreiben, sonst
    <kbd>F5</kbd> drücken.
 3. `@` tippen für Vorschläge – oder **Docs** (<kbd>F1</kbd>) öffnen: alle Befehle mit einem Satz
@@ -137,17 +139,21 @@ Im Terminal: `poezicode` oder `poezicode mein-dokument.pzc`.
 
 | Was | Schreibweise |
 |---|---|
-| Seite einrichten | `@document[paper=A4, margin=2.5cm, font=serif, fontsize=11, lang=de]` |
+| Seite einrichten | `@document[paper=A4, margin=2.5cm, font=serif\|sans\|latex, fontsize=11, lang=de]` |
 | Abstände und Aussehen | `@style[modern]` · `@style[paragraph=0.8ln, indent=1ln]` · `@block[fontsize=9]{…}` |
 | Titel, Inhaltsverzeichnis | `@title{…}` `@author{…}` `@date` `@toc` |
 | Überschriften (nummeriert) | `@chapter{…}` `@section{…}` `@subsection{…}` |
 | Text | `@bold{…}` `@italic{…}` `@underline{…}` `@highlight{…}` `@color[red]{…}` |
 | Formeln | `$a^2 + b^2$` im Text, `$$ … $$` abgesetzt, `@frac{a}{b}` `@sqrt{x}` `@sum_{k=1}^{n}` |
+| Formeln, wie man sie tippt | `$f_R = 1/(2*pi*sqrt(L*C))$` – ohne `@`-Befehl werden Bruch, Wurzel und tiefgestellte Namen daraus gesetzt |
 | Listen und Tabellen | `@list{ @item{…} }` `@numbered{ … }` `@table[header]{ @row{A \| B} }` |
 | Kästen und Zitate | `@note{…}` `@warning{…}` `@quote{…}{Quelle}` `@codeblock[dart]{…}` |
 | Layout | `@center{…}` `@right{…}` `@columns{…}{…}` `@block[top=1cm, left=2cm]{…}` `@newln` `@pagebreak` |
 | Bilder | `@image[width=50%]{foto.png}{Bildunterschrift}` |
 | Zeichnungen und 3D | `@drawing[axes]{ @line{0,0}{3,2} @circle{1,1}{0.5} @plot{sin(x)} }` `@surface{x^2 - y^2}` `@model{name}` |
+| Schaltungen (IEC/DIN) | `@circuit{ @part[resistor, name=R1, value=10k]{0,0} @wire{1.5,0 \| 4,0} @junction{4,0} }` |
+| Platinen | `@pcb[board=50x30]{ @footprint[dip14, name=IC1]{25,15} @track[width=0.6]{5,5 \| 20,5} @via{20,5} }` |
+| Bemaßung | `@dimension{0,0}{6,0}{60 mm}` · `@dimension[turn=30]{…}{…}{…}` |
 | Kopf- und Fußzeile | `@header{links}{Mitte}{rechts}` `@footer{}{Seite @page von @pages}{}` |
 | Rechnen | `@set{a}{5}` · `@function{f(x)}{x^2 - 2}` · `@calc{2*a + 1}` · `@plot{f(x)}` |
 | Eigene Befehle | `@define{wichtig}{@bold{@color[red]{#1}}}` → `@wichtig{Text}` |
@@ -168,6 +174,26 @@ Die Befehle sind englisch, der Text darf natürlich deutsch sein.
   wie `@surface{x^2 - y^2}`.
 - **CAD-Editor** – 3D-Modelle aus Grundkörpern bauen oder 2D-Zeichnungen mit der Maus zeichnen
   und den passenden `@drawing`-Code bekommen. Steht der Cursor in einer Zeichnung, wird genau diese bearbeitet.
+- **Schaltungs-Editor** – ein dritter Reiter mit Schaltzeichen nach IEC/DIN für Elektrotechnik und
+  Digitaltechnik: Bauteile setzen, drehen, benennen, Leitungen ziehen – und den passenden
+  `@circuit`-Code bekommen.
+- **Platinen-Modus** – im selben Reiter eine Platine entwerfen: Bauformen in Millimetern im
+  2,54-mm-Raster, Leiterbahnen auf beiden Seiten, Durchkontaktierungen – `@pcb{…}`.
+- **PoeziMath** – ein Rechenblatt wie Mathcad in einem eigenen Fenster: `R := 100*ohm` legt eine
+  Größe mit Einheit fest, `100 + 50∠90°` rechnet mit Zeigern, `solve(f_R = 1/(2*pi*sqrt(L*C)), L)`
+  stellt eine Formel um, und eine Formelsammlung mit 101 Formeln aus Elektrotechnik und Physik ist
+  einen Klick entfernt (<kbd>Strg</kbd>+<kbd>F</kbd>). Ein Knopf macht aus dem ganzen Blatt
+  PoeziCode im Dokument – und im Quelltext markierte Formeln kommen zurück aufs Blatt.
+- **Formeln so, wie man sie tippt** – `$n = U/sqrt(2*pi*c_r*M)$` wird als Bruch mit Wurzel gesetzt,
+  im Text, in Blöcken, in Spalten und in Zeichnungsbeschriftungen; `@`-Befehle schalten das ab.
+- **Bemaßung** – `@dimension{0,0}{6,0}{60 mm}` zeichnet Maßhilfslinien, Pfeile und die Länge in
+  Zeichnungen und Schaltungen, auf Wunsch mit der Maßzahl längs der Linie.
+- **Große Dokumente bleiben flott** – in einer 200-kB-Mitschrift ist nur die Stelle, an der du
+  arbeitest, wirklich ein Textfeld. Es wandert mit dem Cursor mit, zu sehen ist davon nichts, und
+  das Tippen bleibt so flüssig wie in einer kurzen Datei.
+- **Automatische Formatierung** – <kbd>Strg</kbd>+<kbd>Umschalt</kbd>+<kbd>F</kbd> räumt den
+  Quelltext auf und repariert die üblichen Layout-Fehler, damit ein KI-Dokument keine Nacharbeit
+  braucht.
 - **Lupe** – ein Wort, eine Formel oder Grafik im PDF anklicken, und der Editor springt zur
   Stelle im Quelltext. Geht auch mit <kbd>Strg</kbd>+Klick.
 - **Druckansicht** – in Farbe oder Schwarz-weiß, bevor der Druckdialog aufgeht.
@@ -201,6 +227,9 @@ poezicode-cli build bericht.pzc            # schreibt bericht.pdf
 poezicode-cli render bericht.pzc -o bilder/ # je Seite ein PNG, zum Ansehen
 poezicode-cli check bericht.pzc --json     # jeder Fehler mit Zeile und Spalte
 poezicode-cli watch bericht.pzc --render   # baut bei jeder Änderung neu
+poezicode-cli format bericht.pzc           # bricht um, rückt ein, repariert das Layout
+poezicode-cli calc "230*V/(5*mm) = V/m"    # Einheiten, Zeiger und solve
+poezicode-cli math blatt.txt               # ein PoeziMath-Blatt, Zeile für Zeile
 poezicode-cli docs --json                  # alle Befehle der Sprache
 poezicode-cli prompt                       # die Anleitung für eine KI
 ```
@@ -218,7 +247,12 @@ Dokument schreiben, seine eigenen Fehler sehen und sich die fertigen Seiten anse
 | <kbd>Strg</kbd>+<kbd>E</kbd> | PDF exportieren |
 | <kbd>Strg</kbd>+<kbd>P</kbd> | Druckansicht |
 | <kbd>F1</kbd> | Docs-Fenster |
+| <kbd>Strg</kbd>+<kbd>Umschalt</kbd>+<kbd>F</kbd> | Automatisch formatieren |
 | <kbd>Strg</kbd>+<kbd>,</kbd> | Einstellungen |
+
+In PoeziMath: <kbd>Strg</kbd>+<kbd>F</kbd> öffnet die Formelsammlung,
+<kbd>Strg</kbd>+<kbd>W</kbd> schreibt das Winkelzeichen ∠, <kbd>Strg</kbd>+<kbd>-</kbd> eine
+tiefgestellte Zahl, und <kbd>Enter</kbd> schließt eine Rechnung ab und geht nach unten.
 
 <a id="fragen"></a>
 

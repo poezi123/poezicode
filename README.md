@@ -65,11 +65,11 @@ $$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
 
 | System | Package | |
 |---|---|---|
-| **Windows 10 / 11** (64-bit) – installer | `poezicode-0.4.0-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-windows-x64-setup.exe) |
-| **Windows 10 / 11** (64-bit) – portable, no installation | `poezicode-0.4.0-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-windows-x64.zip) |
-| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.4.0-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-1-x86_64.pkg.tar.zst) |
-| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.4.0_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode_0.4.0_amd64.deb) |
-| **Any other Linux** (Fedora, openSUSE, …) | `poezicode-0.4.0-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.0/poezicode-0.4.0-linux-x64.tar.gz) |
+| **Windows 10 / 11** (64-bit) – installer | `poezicode-0.4.4-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-windows-x64-setup.exe) |
+| **Windows 10 / 11** (64-bit) – portable, no installation | `poezicode-0.4.4-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-windows-x64.zip) |
+| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.4.4-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-1-x86_64.pkg.tar.zst) |
+| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.4.4_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode_0.4.4_amd64.deb) |
+| **Any other Linux** (Fedora, openSUSE, …) | `poezicode-0.4.4-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-linux-x64.tar.gz) |
 
 All versions and checksums (`SHA256SUMS.txt`) are on the
 [releases page](https://github.com/poezi123/poezicode/releases).
@@ -81,7 +81,7 @@ GTK 3, that means Ubuntu 24.04, Debian 13, Fedora 39 or any current Arch-based s
 
 <a id="installation"></a>
 
-**Windows** – run `poezicode-0.3.0-windows-x64-setup.exe`. No administrator rights are needed:
+**Windows** – run `poezicode-0.4.4-windows-x64-setup.exe`. No administrator rights are needed:
 PoeziCode is installed for your user, appears in the Start menu, and `.pzc` files open with it.
 The installer is not code-signed yet, so Windows SmartScreen may say *“Windows protected your
 PC”* – click **More info → Run anyway**. Prefer no installation? Unpack the ZIP and start
@@ -90,20 +90,20 @@ PC”* – click **More info → Run anyway**. Prefer no installation? Unpack th
 **Arch Linux and derivatives**
 
 ```sh
-sudo pacman -U poezicode-0.3.0-1-x86_64.pkg.tar.zst
+sudo pacman -U poezicode-0.4.4-1-x86_64.pkg.tar.zst
 ```
 
 **Ubuntu, Debian, Linux Mint** – double-click the file, or:
 
 ```sh
-sudo apt install ./poezicode_0.3.0_amd64.deb
+sudo apt install ./poezicode_0.4.4_amd64.deb
 ```
 
 **Any other distribution** – no root needed:
 
 ```sh
-tar xzf poezicode-0.3.0-linux-x64.tar.gz
-cd poezicode-0.3.0-linux-x64
+tar xzf poezicode-0.4.4-linux-x64.tar.gz
+cd poezicode-0.4.4-linux-x64
 ./install.sh        # adds PoeziCode to your app menu (~/.local)
 # or just run it in place:  ./poezicode
 ```
@@ -114,7 +114,7 @@ cd poezicode-0.3.0-linux-x64
 sha256sum -c SHA256SUMS.txt --ignore-missing
 ```
 
-On Windows, in PowerShell: `Get-FileHash poezicode-0.3.0-windows-x64-setup.exe` and compare the
+On Windows, in PowerShell: `Get-FileHash poezicode-0.4.4-windows-x64-setup.exe` and compare the
 value with `SHA256SUMS.txt`.
 
 On Linux, PoeziCode is then in your application menu, and `.pzc` files open with it.
@@ -124,8 +124,10 @@ From a terminal: `poezicode` or `poezicode my-document.pzc`.
 
 <a id="quick-start"></a>
 
-1. Start PoeziCode – the first start opens a sample document that shows everything
-   (also in [examples/](examples/)).
+1. Start PoeziCode – on the first start an example document opens that shows everything
+   (it is also in [examples/](examples/)). For electrical engineering: [elektrotechnik.pzc](examples/elektrotechnik.pzc)
+   (schematic, board in 2D and 3D, dimensions) and [logik.pzc](examples/logik.pzc)
+   (basic gates and a half adder with computed truth tables).
 2. Type on the left. With **Live** switched on, the PDF on the right updates as you type;
    otherwise press <kbd>F5</kbd>.
 3. Type `@` to get suggestions, or open **Docs** (<kbd>F1</kbd>) for every command with a
@@ -137,17 +139,21 @@ From a terminal: `poezicode` or `poezicode my-document.pzc`.
 
 | What | Write |
 |---|---|
-| Page setup | `@document[paper=A4, margin=2.5cm, font=serif, fontsize=11, lang=en]` |
+| Page setup | `@document[paper=A4, margin=2.5cm, font=serif\|sans\|latex, fontsize=11, lang=en]` |
 | Spacing and look | `@style[modern]` · `@style[paragraph=0.8ln, indent=1ln]` · `@block[fontsize=9]{…}` |
 | Title, table of contents | `@title{…}` `@author{…}` `@date` `@toc` |
 | Headings (numbered) | `@chapter{…}` `@section{…}` `@subsection{…}` |
 | Text | `@bold{…}` `@italic{…}` `@underline{…}` `@highlight{…}` `@color[red]{…}` |
 | Formulas | `$a^2 + b^2$` inline, `$$ … $$` displayed, `@frac{a}{b}` `@sqrt{x}` `@sum_{k=1}^{n}` |
+| Formulas as you type them | `$f_R = 1/(2*pi*sqrt(L*C))$` – without an `@` command, fraction, root and subscripts are set from what you wrote |
 | Lists and tables | `@list{ @item{…} }` `@numbered{ … }` `@table[header]{ @row{A \| B} }` |
 | Boxes and quotes | `@note{…}` `@warning{…}` `@quote{…}{Source}` `@codeblock[dart]{…}` |
 | Layout | `@center{…}` `@right{…}` `@columns{…}{…}` `@block[top=1cm, left=2cm]{…}` `@newln` `@pagebreak` |
 | Pictures | `@image[width=50%]{photo.png}{Caption}` |
 | Drawings and 3D | `@drawing[axes]{ @line{0,0}{3,2} @circle{1,1}{0.5} @plot{sin(x)} }` `@surface{x^2 - y^2}` `@model{name}` |
+| Circuits (IEC/DIN) | `@circuit{ @part[resistor, name=R1, value=10k]{0,0} @wire{1.5,0 \| 4,0} @junction{4,0} }` |
+| Circuit boards | `@pcb[board=50x30]{ @footprint[dip14, name=IC1]{25,15} @track[width=0.6]{5,5 \| 20,5} @via{20,5} }` |
+| Dimensions | `@dimension{0,0}{6,0}{60 mm}` · `@dimension[turn=30]{…}{…}{…}` |
 | Header and footer | `@header{left}{centre}{right}` `@footer{}{Page @page of @pages}{}` |
 | Computing | `@set{a}{5}` · `@function{f(x)}{x^2 - 2}` · `@calc{2*a + 1}` · `@plot{f(x)}` |
 | Your own commands | `@define{important}{@bold{@color[red]{#1}}}` → `@important{text}` |
@@ -166,6 +172,24 @@ From a terminal: `poezicode` or `poezicode my-document.pzc`.
   like `@surface{x^2 - y^2}`.
 - **CAD editor** – build 3D models from simple solids, or draw 2D drawings with the mouse
   and get the matching `@drawing` code. With the cursor in an existing drawing, that drawing is edited.
+- **Circuit editor** – a third tab with IEC/DIN symbols for electrical engineering and logic:
+  place parts, turn them, name them, draw wires, and get the matching `@circuit` code.
+- **Board mode** – in the same tab, design a circuit board: footprints in millimetres on the
+  2.54 mm grid, copper tracks on both sides, vias – `@pcb{…}`.
+- **PoeziMath** – a worksheet like Mathcad in a window of its own: `R := 100*ohm` fixes a quantity
+  with its unit, `100 + 50∠90°` calculates with phasors, `solve(f_R = 1/(2*pi*sqrt(L*C)), L)`
+  rearranges a formula, and a formulary of 101 formulas from electrical engineering and physics is
+  one click away (<kbd>Ctrl</kbd>+<kbd>F</kbd>). A button turns the whole sheet into PoeziCode in
+  your document – and formulas selected in the source come back onto the sheet.
+- **Formulas the way you type them** – `$n = U/sqrt(2*pi*c_r*M)$` is set as a fraction with a root,
+  in the text, in blocks, in columns and in drawing labels; `@` commands switch the conversion off.
+- **Dimensions** – `@dimension{0,0}{6,0}{60 mm}` draws extension lines, arrows and the length in
+  drawings and circuits, with the figure along the line if you want.
+- **Large documents stay quick** – in a 200 kB script only the part you are working in is really a
+  text field. It follows the caret, nothing of it can be seen, and typing stays as smooth as in a
+  short file.
+- **Automatic formatting** – <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> tidies the source and
+  repairs the usual layout mistakes, so a document an AI wrote needs no rework.
 - **Locate** – click a word, formula or drawing in the PDF and the editor jumps to that spot in
   the source. Also works with <kbd>Ctrl</kbd>+click.
 - **Print preview** – in colour or black & white before the print dialog opens.
@@ -198,6 +222,9 @@ poezicode-cli build report.pzc            # writes report.pdf
 poezicode-cli render report.pzc -o out/   # one PNG per page, to look at the result
 poezicode-cli check report.pzc --json     # every mistake with line and column
 poezicode-cli watch report.pzc --render   # rebuilds on every change
+poezicode-cli format report.pzc           # wraps, indents and repairs the layout
+poezicode-cli calc "230*V/(5*mm) = V/m"   # units, phasors and solve
+poezicode-cli math sheet.txt              # a PoeziMath sheet, line by line
 poezicode-cli docs --json                 # every command of the language
 poezicode-cli prompt                      # the instructions for an AI
 ```
@@ -215,7 +242,12 @@ can write a document, see its own mistakes and look at the rendered pages.
 | <kbd>Ctrl</kbd>+<kbd>E</kbd> | Export PDF |
 | <kbd>Ctrl</kbd>+<kbd>P</kbd> | Print preview |
 | <kbd>F1</kbd> | Docs window |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> | Format automatically |
 | <kbd>Ctrl</kbd>+<kbd>,</kbd> | Settings |
+
+In PoeziMath: <kbd>Ctrl</kbd>+<kbd>F</kbd> opens the formulary, <kbd>Ctrl</kbd>+<kbd>W</kbd> types
+the angle sign ∠, <kbd>Ctrl</kbd>+<kbd>-</kbd> a subscript, and <kbd>Enter</kbd> finishes a
+calculation and moves down.
 
 ## FAQ
 

@@ -1,0 +1,111 @@
+@document[paper=A4, font=serif, fontsize=11, lang=de]
+@style[modern]
+@title{Digitaltechnik}
+@subtitle{Logikschaltungen und ihre Wahrheitstabellen}
+@header{Digitaltechnik}{}{Logik}
+@footer{}{Seite @page von @pages}{}
+
+@chapter{Wie es funktioniert}
+
+Eine Schaltung aus Gattern schreibt man mit @code{@circuit}. Jedes Gatter ist
+ein @code{@part}, die Verbindungen sind @code{@wire}. Setzt man die Option
+@code{truthtable} dazu, rechnet PoeziCode die Schaltung selbst durch und
+schreibt die Wahrheitstabelle darunter.
+
+@note{Dafür braucht die Schaltung @bold{Eingänge} (@code{@part[input, name=A]})
+und @bold{Ausgänge} (@code{@part[output, name=Y]}). Die Namen werden zu den
+Spaltenüberschriften.}
+
+@codeblock{@circuit[truthtable]{
+  @part[input, name=A]{0, 1}
+  @part[input, name=B]{0, -3}
+  @part[and, name=K1]{6, 0}
+  @part[output, name=Y]{11, 0}
+  @wire{1.5, 1 | 3, 1 | 3, 0.5 | 4.5, 0.5}
+  @wire{1.5, -3 | 3, -3 | 3, -0.5 | 4.5, -0.5}
+  @wire{7.5, 0 | 9.5, 0}
+}{UND-Gatter}}
+
+@chapter{Die Grundgatter}
+
+@section{UND}
+
+@circuit[truthtable, width=8cm]{
+  @part[input, name=A]{0, 1}
+  @part[input, name=B]{0, -3}
+  @part[and, name=K1]{6, 0}
+  @part[output, name=Y]{11, 0}
+  @wire{1.5, 1 | 3, 1 | 3, 0.5 | 4.5, 0.5}
+  @wire{1.5, -3 | 3, -3 | 3, -0.5 | 4.5, -0.5}
+  @wire{7.5, 0 | 9.5, 0}
+}{Y ist nur 1, wenn A und B 1 sind}
+
+@section{ODER}
+
+@circuit[truthtable, width=8cm]{
+  @part[input, name=A]{0, 1}
+  @part[input, name=B]{0, -3}
+  @part[or, name=K1]{6, 0}
+  @part[output, name=Y]{11, 0}
+  @wire{1.5, 1 | 3, 1 | 3, 0.5 | 4.5, 0.5}
+  @wire{1.5, -3 | 3, -3 | 3, -0.5 | 4.5, -0.5}
+  @wire{7.5, 0 | 9.5, 0}
+}{Y ist 1, sobald einer der beiden 1 ist}
+
+@section{NAND}
+
+@circuit[truthtable, width=8cm]{
+  @part[input, name=A]{0, 1}
+  @part[input, name=B]{0, -3}
+  @part[nand, name=K1]{6, 0}
+  @part[output, name=Y]{11, 0}
+  @wire{1.5, 1 | 3, 1 | 3, 0.5 | 4.5, 0.5}
+  @wire{1.5, -3 | 3, -3 | 3, -0.5 | 4.5, -0.5}
+  @wire{7.5, 0 | 9.5, 0}
+}{Das verneinte UND – Y ist nur bei 1 und 1 gleich 0}
+
+@pagebreak
+
+@chapter{Halbaddierer}
+
+Zwei Gatter, zwei Ausgänge: Die Summe $S$ ist das Exklusiv-ODER, der
+Übertrag $C$ das UND der beiden Eingänge.
+
+$$ S = (A @land @neg B) @lor (@neg A @land B) $$
+
+$$ C = A @land B $$
+
+@circuit[truthtable, width=12cm]{
+  @part[input, name=A]{0, 2}
+  @part[input, name=B]{0, -2}
+  @part[xor, name=K1]{7, 2}
+  @part[and, name=K2]{7, -3}
+  @part[output, name=S]{13, 2}
+  @part[output, name=C]{13, -3}
+  @wire{1.5, 2 | 4, 2 | 4, 2.5 | 5.5, 2.5}
+  @wire{4, 2 | 4, -2.5 | 5.5, -2.5}
+  @wire{1.5, -2 | 3, -2 | 3, 1.5 | 5.5, 1.5}
+  @wire{3, -2 | 3, -3.5 | 5.5, -3.5}
+  @wire{8.5, 2 | 11.5, 2}
+  @wire{8.5, -3 | 11.5, -3}
+  @junction{4, 2}
+  @junction{3, -2}
+}{Halbaddierer: S ist die Summe, C der Übertrag}
+
+Die Tabelle liest sich wie eine Addition: 1 + 1 ergibt 0 mit Übertrag 1.
+
+@chapter{Selbst prüfen}
+
+Im CAD-Editor gibt es im Reiter @bold{Schaltung} zwei Hilfen:
+
+@list{
+  @item{@bold{Wahrheitstabelle} – derselbe Schalter wie die Option oben; die
+  Tabelle erscheint im PDF unter der Zeichnung.}
+  @item{@bold{Schaltung prüfen} – meldet offene Anschlüsse, doppelt vergebene
+  Bezeichnungen, Leitungen, die im Nichts enden, und zwei Ausgänge auf
+  derselben Leitung.}
+}
+
+@warning{Zwei Leitungen, die sich nur kreuzen, sind @bold{nicht} verbunden.
+Verbunden ist, wo eine Leitung auf einer anderen endet – dort setzt der Editor
+den Verbindungspunkt (@code{@junction}) von selbst.}
