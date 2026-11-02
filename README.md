@@ -65,11 +65,11 @@ $$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
 
 | System | Package | |
 |---|---|---|
-| **Windows 10 / 11** (64-bit) – installer | `poezicode-0.4.4-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-windows-x64-setup.exe) |
-| **Windows 10 / 11** (64-bit) – portable, no installation | `poezicode-0.4.4-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-windows-x64.zip) |
-| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.4.4-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-1-x86_64.pkg.tar.zst) |
-| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.4.4_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode_0.4.4_amd64.deb) |
-| **Any other Linux** (Fedora, openSUSE, …) | `poezicode-0.4.4-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.4/poezicode-0.4.4-linux-x64.tar.gz) |
+| **Windows 10 / 11** (64-bit) – installer | `poezicode-0.4.5-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode-0.4.5-windows-x64-setup.exe) |
+| **Windows 10 / 11** (64-bit) – portable, no installation | `poezicode-0.4.5-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode-0.4.5-windows-x64.zip) |
+| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.4.5-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode-0.4.5-1-x86_64.pkg.tar.zst) |
+| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.4.5_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode_0.4.5_amd64.deb) |
+| **Any other Linux** (Fedora, openSUSE, …) | `poezicode-0.4.5-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode-0.4.5-linux-x64.tar.gz) |
 
 All versions and checksums (`SHA256SUMS.txt`) are on the
 [releases page](https://github.com/poezi123/poezicode/releases).
@@ -81,7 +81,7 @@ GTK 3, that means Ubuntu 24.04, Debian 13, Fedora 39 or any current Arch-based s
 
 <a id="installation"></a>
 
-**Windows** – run `poezicode-0.4.4-windows-x64-setup.exe`. No administrator rights are needed:
+**Windows** – run `poezicode-0.4.5-windows-x64-setup.exe`. No administrator rights are needed:
 PoeziCode is installed for your user, appears in the Start menu, and `.pzc` files open with it.
 The installer is not code-signed yet, so Windows SmartScreen may say *“Windows protected your
 PC”* – click **More info → Run anyway**. Prefer no installation? Unpack the ZIP and start
@@ -90,20 +90,20 @@ PC”* – click **More info → Run anyway**. Prefer no installation? Unpack th
 **Arch Linux and derivatives**
 
 ```sh
-sudo pacman -U poezicode-0.4.4-1-x86_64.pkg.tar.zst
+sudo pacman -U poezicode-0.4.5-1-x86_64.pkg.tar.zst
 ```
 
 **Ubuntu, Debian, Linux Mint** – double-click the file, or:
 
 ```sh
-sudo apt install ./poezicode_0.4.4_amd64.deb
+sudo apt install ./poezicode_0.4.5_amd64.deb
 ```
 
 **Any other distribution** – no root needed:
 
 ```sh
-tar xzf poezicode-0.4.4-linux-x64.tar.gz
-cd poezicode-0.4.4-linux-x64
+tar xzf poezicode-0.4.5-linux-x64.tar.gz
+cd poezicode-0.4.5-linux-x64
 ./install.sh        # adds PoeziCode to your app menu (~/.local)
 # or just run it in place:  ./poezicode
 ```
@@ -114,7 +114,7 @@ cd poezicode-0.4.4-linux-x64
 sha256sum -c SHA256SUMS.txt --ignore-missing
 ```
 
-On Windows, in PowerShell: `Get-FileHash poezicode-0.4.4-windows-x64-setup.exe` and compare the
+On Windows, in PowerShell: `Get-FileHash poezicode-0.4.5-windows-x64-setup.exe` and compare the
 value with `SHA256SUMS.txt`.
 
 On Linux, PoeziCode is then in your application menu, and `.pzc` files open with it.
@@ -176,6 +176,10 @@ From a terminal: `poezicode` or `poezicode my-document.pzc`.
   place parts, turn them, name them, draw wires, and get the matching `@circuit` code.
 - **Board mode** – in the same tab, design a circuit board: footprints in millimetres on the
   2.54 mm grid, copper tracks on both sides, vias – `@pcb{…}`.
+- **Test run** – <kbd>F5</kbd> puts the circuit under power: voltage shows as colour, current as
+  moving dots through the wires and through the parts themselves, LEDs light up, switches are
+  thrown with a click, and clicking a part or a wire measures voltage, current and power. Works on
+  the board too. A transistor logic circuit can be checked before a single part is soldered.
 - **PoeziMath** – a worksheet like Mathcad in a window of its own: `R := 100*ohm` fixes a quantity
   with its unit, `100 + 50∠90°` calculates with phasors, `solve(f_R = 1/(2*pi*sqrt(L*C)), L)`
   rearranges a formula, and a formulary of 101 formulas from electrical engineering and physics is

@@ -1,5 +1,54 @@
 # Changelog
 
+## v0.4.5 – putting circuits under power
+
+**English**
+
+- **A test run for circuits and boards.** <kbd>F5</kbd> or the play button puts the drawing under
+  power and solves it: voltage shows as colour, current as dots moving through the wires *and*
+  through the parts themselves – a transistor shows the current along the internal paths of its own
+  symbol, an open switch shows none. LEDs light up as brightly as their current allows. Switches
+  are thrown with a click while it runs, and clicking a part or a wire measures voltage, current
+  and power. A board under `@pcb` is powered the same way.
+- **The solver follows the real physics.** Nodal analysis with diodes and transistors as switching
+  elements: series and parallel circuits, voltage dividers, transistor logic, half adders, full
+  adders. An open base no longer invents a voltage out of nowhere, a transistor needs real base
+  current, a diode stays blocked against the current, a changeover switch has three terminals
+  instead of two, and several ground symbols are one net.
+- **Larger circuits stay quick.** The state search stops as soon as it repeats itself, so an
+  8-stage adder with 112 transistors settles in a fraction of a second instead of two.
+- **Parts and wires stay together.** Dragging a part takes its wires along, the grid snapping also
+  applies while moving, and a wire can be joined anywhere along its length, not only at its ends.
+- **`labelsize` applies to every label** of a `@drawing` or `@circuit`, not just to the numbers on
+  the axes – the only way to keep a schematic with a hundred parts readable on one page.
+- **`@pagebreak` inside `@columns` is reported as an error** at the right spot instead of producing
+  a broken layout, and a block that is taller than a page says so clearly.
+
+**Deutsch**
+
+- **Ein Prüflauf für Schaltungen und Platinen.** <kbd>F5</kbd> oder der Play-Knopf legt Spannung an
+  die Zeichnung und rechnet sie durch: Spannung als Farbe, Strom als wandernde Punkte durch die
+  Leitungen *und* durch die Bauteile selbst – beim Transistor läuft der Strom sichtbar durch die
+  internen Wege des Schaltzeichens, beim offenen Schalter gar nicht. Leuchtdioden leuchten so hell,
+  wie ihr Strom es hergibt. Schalter legt man im Lauf per Klick um, und ein Klick auf Bauteil oder
+  Leitung misst Spannung, Strom und Leistung. Eine Platine unter `@pcb` wird genauso versorgt.
+- **Gerechnet wird nach der Physik.** Knotenpotentialverfahren mit Dioden und Transistoren als
+  schaltenden Elementen: Reihen- und Parallelschaltungen, Spannungsteiler, Transistorlogik,
+  Halbaddierer, Volladdierer. Eine offene Basis erfindet keine Spannung mehr, ein Transistor
+  braucht wirklich Basisstrom, eine Diode bleibt gegen den Strom gesperrt, ein Umschalter hat drei
+  Anschlüsse statt zwei, und mehrere Massezeichen sind ein Netz.
+- **Große Schaltungen bleiben flott.** Die Zustandssuche bricht ab, sobald sie sich wiederholt –
+  ein achtstelliges Addierwerk mit 112 Transistoren steht in Sekundenbruchteilen statt in zwei
+  Sekunden.
+- **Bauteil und Leitung bleiben zusammen.** Beim Verschieben eines Bauteils gehen die Leitungen
+  mit, das Raster gilt auch beim Verschieben, und eine Verbindung darf mitten auf einer Leitung
+  sitzen, nicht nur an deren Enden.
+- **`labelsize` gilt für alle Beschriftungen** einer `@drawing` oder `@circuit`, nicht nur für die
+  Zahlen an den Achsen – anders ist ein Schaltplan mit hundert Bauteilen auf einer Seite nicht
+  lesbar.
+- **`@pagebreak` in `@columns` wird als Fehler gemeldet** – an der richtigen Stelle statt als
+  kaputtes Layout, und ein Block, der höher als eine Seite ist, sagt das deutlich.
+
 ## v0.4.4 – formulas on parts, and what a full test run turned up
 
 **English**
