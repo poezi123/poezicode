@@ -65,11 +65,11 @@ $$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
 
 | System | Package | |
 |---|---|---|
-| **Windows 10 / 11** (64-bit) – installer | `poezicode-0.4.5-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode-0.4.5-windows-x64-setup.exe) |
-| **Windows 10 / 11** (64-bit) – portable, no installation | `poezicode-0.4.5-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode-0.4.5-windows-x64.zip) |
-| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.4.5-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode-0.4.5-1-x86_64.pkg.tar.zst) |
-| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.4.5_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode_0.4.5_amd64.deb) |
-| **Any other Linux** (Fedora, openSUSE, …) | `poezicode-0.4.5-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.4.5/poezicode-0.4.5-linux-x64.tar.gz) |
+| **Windows 10 / 11** (64-bit) – installer | `poezicode-0.6.3-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode-0.6.3-windows-x64-setup.exe) |
+| **Windows 10 / 11** (64-bit) – portable, no installation | `poezicode-0.6.3-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode-0.6.3-windows-x64.zip) |
+| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.6.3-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode-0.6.3-1-x86_64.pkg.tar.zst) |
+| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.6.3_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode_0.6.3_amd64.deb) |
+| **Any other Linux** (Fedora, openSUSE, …) | `poezicode-0.6.3-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode-0.6.3-linux-x64.tar.gz) |
 
 All versions and checksums (`SHA256SUMS.txt`) are on the
 [releases page](https://github.com/poezi123/poezicode/releases).
@@ -81,7 +81,7 @@ GTK 3, that means Ubuntu 24.04, Debian 13, Fedora 39 or any current Arch-based s
 
 <a id="installation"></a>
 
-**Windows** – run `poezicode-0.4.5-windows-x64-setup.exe`. No administrator rights are needed:
+**Windows** – run `poezicode-0.6.3-windows-x64-setup.exe`. No administrator rights are needed:
 PoeziCode is installed for your user, appears in the Start menu, and `.pzc` files open with it.
 The installer is not code-signed yet, so Windows SmartScreen may say *“Windows protected your
 PC”* – click **More info → Run anyway**. Prefer no installation? Unpack the ZIP and start
@@ -90,20 +90,20 @@ PC”* – click **More info → Run anyway**. Prefer no installation? Unpack th
 **Arch Linux and derivatives**
 
 ```sh
-sudo pacman -U poezicode-0.4.5-1-x86_64.pkg.tar.zst
+sudo pacman -U poezicode-0.6.3-1-x86_64.pkg.tar.zst
 ```
 
 **Ubuntu, Debian, Linux Mint** – double-click the file, or:
 
 ```sh
-sudo apt install ./poezicode_0.4.5_amd64.deb
+sudo apt install ./poezicode_0.6.3_amd64.deb
 ```
 
 **Any other distribution** – no root needed:
 
 ```sh
-tar xzf poezicode-0.4.5-linux-x64.tar.gz
-cd poezicode-0.4.5-linux-x64
+tar xzf poezicode-0.6.3-linux-x64.tar.gz
+cd poezicode-0.6.3-linux-x64
 ./install.sh        # adds PoeziCode to your app menu (~/.local)
 # or just run it in place:  ./poezicode
 ```
@@ -114,7 +114,7 @@ cd poezicode-0.4.5-linux-x64
 sha256sum -c SHA256SUMS.txt --ignore-missing
 ```
 
-On Windows, in PowerShell: `Get-FileHash poezicode-0.4.5-windows-x64-setup.exe` and compare the
+On Windows, in PowerShell: `Get-FileHash poezicode-0.6.3-windows-x64-setup.exe` and compare the
 value with `SHA256SUMS.txt`.
 
 On Linux, PoeziCode is then in your application menu, and `.pzc` files open with it.
@@ -162,6 +162,16 @@ From a terminal: `poezicode` or `poezicode my-document.pzc`.
 
 <a id="features"></a>
 
+- **LaTeX mode** – click the LaTeX logo at the top left and write LaTeX instead of PoeziCode,
+  in the same editor with the same preview. PoeziCode brings its own LaTeX: it fetches a complete
+  TeX distribution into its own folder on first use – no installation, no administrator rights –
+  and a missing package is fetched by itself when a document asks for it. A **Libraries** panel
+  searches all of CTAN and installs with one click. The CAD editor writes `tikzpicture`, PoeziMath
+  writes LaTeX, and a PoeziCode document can be converted over at the press of a button.
+- **Handwriting becomes source code** – point PoeziCode at a photo of your notes and get
+  PoeziCode or LaTeX out of it, depending on which mode you are in. Everything runs on your own
+  machine: PoeziCode fetches Ollama and the model by itself, uses your graphics card, and no image
+  leaves your computer. Image and result stand side by side so you can correct before inserting.
 - **Live preview** – the PDF is typeset in the background while you type, sharp at any zoom.
 - **Its own language** – short, readable commands, helpful error messages with suggestions
   (*“Did you mean @italic?”*), and suggestions while typing.

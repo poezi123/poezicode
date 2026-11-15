@@ -1,5 +1,71 @@
 # Changelog
 
+## v0.6.3 – LaTeX, Handschrift und halb so lange Wartezeiten
+
+**English**
+
+- **A LaTeX mode, right next to PoeziCode.** The LaTeX logo sits beside the PoeziCode logo at the
+  top left; one click switches. Same editor, same preview, same CAD editor and PoeziMath – only a
+  different typesetter behind it. PoeziCode stays exactly as it was.
+- **PoeziCode brings its own LaTeX.** Nothing has to be installed: on first use it fetches a
+  complete TeX distribution (TinyTeX) into its own folder – no administrator rights, nothing
+  touched on your system. A package the document asks for and that is missing is fetched on its
+  own, including hyphenation patterns and the rebuild of the formats that needs.
+- **Libraries instead of the AI prompt.** In LaTeX mode the button opens a package panel: the
+  fifty most useful packages with a sentence each – by groups for maths, drawings, tables, page
+  layout, source code, talks and electrical engineering – plus a search across all of CTAN.
+- **The editor speaks LaTeX.** Highlighting, completion on the backslash including your own
+  `\newcommand`s, and the docs window (<kbd>F1</kbd>) with the LaTeX commands by area.
+- **The CAD editor writes TikZ.** A 2D drawing goes into the document as a `tikzpicture`, comes
+  back out for editing, and the `\usepackage` lines it needs are added and installed by themselves.
+- **PoeziMath writes LaTeX** – and reads it: a formula selected in a `.tex` document lands on the
+  sheet, `\SI{230}{\volt}` included.
+- **A PoeziCode document converts over** at the press of a button – headings, text, formulas,
+  lists, tables and drawings, through the same parser that typesets them.
+- **Handwriting becomes source code.** Give PoeziCode a photo of your notes and get PoeziCode or
+  LaTeX out of it, whichever mode you are in. Everything runs on your own machine: PoeziCode
+  fetches Ollama and the model by itself, uses your graphics card, and no image leaves your
+  computer. Image and result stand side by side, errors are shown right there, and the result goes
+  in at the cursor or becomes a new document. A tall page is read in strips, which gets the digits
+  right far more often and is faster as well.
+- **Half the waiting.** A document with a table of contents used to be typeset twice on every
+  keystroke; now the page numbers from the last run are reused and the second pass only runs when
+  something actually moved. The preview no longer throws its pages away at every keystroke, and
+  the pause before typesetting follows how fast the document actually is.
+
+**Deutsch**
+
+- **Ein LaTeX-Modus, direkt neben PoeziCode.** Das LaTeX-Zeichen sitzt oben links neben dem von
+  PoeziCode; ein Klick schaltet um. Derselbe Editor, dieselbe Vorschau, derselbe CAD-Editor und
+  PoeziMath – nur ein anderer Setzer dahinter. An PoeziCode ändert sich nichts.
+- **PoeziCode bringt sein eigenes LaTeX mit.** Es muss nichts installiert werden: Beim ersten Mal
+  holt es eine vollständige TeX-Installation (TinyTeX) in seinen eigenen Ordner – ohne
+  Verwalterrechte, ohne am System etwas anzufassen. Ein Paket, das im Dokument steht und fehlt,
+  holt es selbst nach, samt Trennmustern und dem Neubau der Formate, den die brauchen.
+- **Pakete statt KI-Prompt.** Im LaTeX-Modus öffnet der Knopf die Paketverwaltung: die fünfzig
+  nützlichsten Pakete mit je einem Satz – nach Gruppen für Mathematik, Zeichnungen, Tabellen,
+  Seitenaufbau, Quelltext, Vorträge und Elektrotechnik – dazu die Suche über ganz CTAN.
+- **Der Editor spricht LaTeX.** Hervorhebung, Vervollständigung am Rückstrich samt eigener
+  `\newcommand`s, und das Docs-Fenster (<kbd>F1</kbd>) mit den LaTeX-Befehlen nach Bereichen.
+- **Der CAD-Editor schreibt TikZ.** Eine 2D-Zeichnung kommt als `tikzpicture` ins Dokument, lässt
+  sich von dort wieder bearbeiten, und die nötigen `\usepackage`-Zeilen setzt und installiert
+  PoeziCode selbst.
+- **PoeziMath schreibt LaTeX** – und liest es: Eine im `.tex` markierte Formel landet auf dem
+  Blatt, `\SI{230}{\volt}` eingeschlossen.
+- **Ein PoeziCode-Dokument wandert auf Knopfdruck hinüber** – Überschriften, Text, Formeln,
+  Listen, Tabellen und Zeichnungen, über denselben Parser, der sie auch setzt.
+- **Aus Handschrift wird Quelltext.** Ein Foto der Mitschrift hinein, PoeziCode oder LaTeX heraus,
+  je nachdem, worin man gerade arbeitet. Alles rechnet auf dem eigenen Rechner: PoeziCode holt
+  sich Ollama und das Modell selbst, nutzt die Grafikkarte, und kein Bild verlässt den
+  Schreibtisch. Bild und Ergebnis stehen nebeneinander, Fehler werden gleich dort gemeldet, und
+  das Ergebnis geht an die Cursorstelle oder wird ein neues Dokument. Eine hohe Seite wird in
+  Streifen gelesen – das trifft die Ziffern viel öfter und geht obendrein schneller.
+- **Halb so lange warten.** Ein Dokument mit Inhaltsverzeichnis wurde bei jedem Tastendruck
+  zweimal gesetzt; jetzt werden die Seitenzahlen vom letzten Mal wiederverwendet, und der zweite
+  Durchlauf kommt nur noch, wenn sich wirklich etwas verschoben hat. Die Vorschau wirft ihre
+  Seiten nicht mehr bei jedem Tastendruck weg, und die Pause vor dem Setzen richtet sich danach,
+  wie schnell das Dokument tatsächlich ist.
+
 ## v0.4.5 – putting circuits under power
 
 **English**
