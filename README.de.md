@@ -65,11 +65,11 @@ $$ x_{1,2} = @frac{-b +- @sqrt{b^2 - 4ac}}{2a} $$
 
 | System | Paket | |
 |---|---|---|
-| **Windows 10 / 11** (64 Bit) – Installer | `poezicode-0.6.3-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode-0.6.3-windows-x64-setup.exe) |
-| **Windows 10 / 11** (64 Bit) – zum Entpacken, ohne Installation | `poezicode-0.6.3-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode-0.6.3-windows-x64.zip) |
-| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.6.3-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode-0.6.3-1-x86_64.pkg.tar.zst) |
-| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.6.3_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode_0.6.3_amd64.deb) |
-| **Alle anderen Linux-Systeme** (Fedora, openSUSE …) | `poezicode-0.6.3-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.3/poezicode-0.6.3-linux-x64.tar.gz) |
+| **Windows 10 / 11** (64 Bit) – Installer | `poezicode-0.6.4-windows-x64-setup.exe` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.4/poezicode-0.6.4-windows-x64-setup.exe) |
+| **Windows 10 / 11** (64 Bit) – zum Entpacken, ohne Installation | `poezicode-0.6.4-windows-x64.zip` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.4/poezicode-0.6.4-windows-x64.zip) |
+| **Arch Linux**, CachyOS, Manjaro, EndeavourOS | `poezicode-0.6.4-1-x86_64.pkg.tar.zst` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.4/poezicode-0.6.4-1-x86_64.pkg.tar.zst) |
+| **Ubuntu 24.04+**, Debian 13, Linux Mint 22 | `poezicode_0.6.4_amd64.deb` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.4/poezicode_0.6.4_amd64.deb) |
+| **Alle anderen Linux-Systeme** (Fedora, openSUSE …) | `poezicode-0.6.4-linux-x64.tar.gz` | [Download](https://github.com/poezi123/poezicode/releases/download/v0.6.4/poezicode-0.6.4-linux-x64.tar.gz) |
 
 Alle Versionen und Prüfsummen (`SHA256SUMS.txt`) stehen auf der
 [Release-Seite](https://github.com/poezi123/poezicode/releases).
@@ -81,7 +81,7 @@ und GTK 3, also Ubuntu 24.04, Debian 13, Fedora 39 oder ein aktuelles Arch-basie
 
 ## Installation
 
-**Windows** – `poezicode-0.6.3-windows-x64-setup.exe` starten. Administratorrechte braucht es
+**Windows** – `poezicode-0.6.4-windows-x64-setup.exe` starten. Administratorrechte braucht es
 nicht: PoeziCode wird für deinen Benutzer installiert, steht im Startmenü, und `.pzc`-Dateien
 öffnen sich damit. Der Installer ist noch nicht signiert, deshalb meldet Windows SmartScreen
 womöglich *„Der Computer wurde durch Windows geschützt“* – dann **Weitere Informationen → Trotzdem
@@ -90,20 +90,20 @@ ausführen**. Lieber ohne Installation? Das ZIP entpacken und `poezicode.exe` st
 **Arch Linux und Ableger**
 
 ```sh
-sudo pacman -U poezicode-0.6.3-1-x86_64.pkg.tar.zst
+sudo pacman -U poezicode-0.6.4-1-x86_64.pkg.tar.zst
 ```
 
 **Ubuntu, Debian, Linux Mint** – Datei doppelt anklicken, oder:
 
 ```sh
-sudo apt install ./poezicode_0.6.3_amd64.deb
+sudo apt install ./poezicode_0.6.4_amd64.deb
 ```
 
 **Alle anderen Distributionen** – ohne Administratorrechte:
 
 ```sh
-tar xzf poezicode-0.6.3-linux-x64.tar.gz
-cd poezicode-0.6.3-linux-x64
+tar xzf poezicode-0.6.4-linux-x64.tar.gz
+cd poezicode-0.6.4-linux-x64
 ./install.sh        # trägt PoeziCode ins Anwendungsmenü ein (~/.local)
 # oder direkt starten:  ./poezicode
 ```
@@ -114,7 +114,7 @@ cd poezicode-0.6.3-linux-x64
 sha256sum -c SHA256SUMS.txt --ignore-missing
 ```
 
-Unter Windows in PowerShell: `Get-FileHash poezicode-0.6.3-windows-x64-setup.exe` und den Wert mit
+Unter Windows in PowerShell: `Get-FileHash poezicode-0.6.4-windows-x64-setup.exe` und den Wert mit
 `SHA256SUMS.txt` vergleichen.
 
 Unter Linux steht PoeziCode danach im Anwendungsmenü, und `.pzc`-Dateien öffnen sich damit.

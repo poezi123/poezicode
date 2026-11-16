@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.6.4 – Linux: das Fenster wird wieder vollständig gezeichnet
+
+**English**
+
+- **Linux: the window is drawn in full again.** On machines with the proprietary NVIDIA driver, the
+  interface was drawn offset by half a window: the bottom left corner showed the top right quarter
+  of the window, the rest stayed black. The cause was not PoeziCode but the Flutter engine that
+  version 0.6.3 was built with, which misplaces the layer on graphics cards where it avoids
+  `glBlitFramebuffer` – and the NVIDIA driver is on that list. This release is built with the
+  engine of 0.4.5, which places it correctly. Nothing else changed; Windows was never affected.
+
+**Deutsch**
+
+- **Linux: das Fenster wird wieder vollständig gezeichnet.** Auf Rechnern mit dem NVIDIA-Treiber
+  war die Oberfläche um ein halbes Fenster verschoben: Unten links stand das obere rechte Viertel,
+  der Rest blieb schwarz. Schuld war nicht PoeziCode, sondern die Flutter-Engine, mit der 0.6.3
+  gebaut wurde – sie setzt die Ebene falsch, wenn sie `glBlitFramebuffer` umgeht, und genau das tut
+  sie beim NVIDIA-Treiber. Diese Ausgabe ist mit der Engine von 0.4.5 gebaut, die richtig zeichnet.
+  Sonst ist nichts verändert; Windows war nie betroffen.
+
 ## v0.6.3 – LaTeX, Handschrift und halb so lange Wartezeiten
 
 **English**
